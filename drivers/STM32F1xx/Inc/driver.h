@@ -35,7 +35,7 @@
 #define BITBAND_PERI(x, b) (*((__IO uint8_t *) (PERIPH_BB_BASE + (((uint32_t)(volatile const uint32_t *)&(x)) - PERIPH_BASE)*32 + (b)*4)))
 
 // NOTE: Only one board may be enabled!
-//#define BOARD_CNC3040
+#define BOARD_CNC3040
 
 // Configuration
 // Set value to 1 to enable, 0 to disable
