@@ -1973,7 +1973,8 @@ status_code_t gc_execute_block(char *block, char *message)
         plan_data.condition.coolant = gc_state.modal.coolant;
         plan_data.condition.is_rpm_rate_adjusted = gc_state.is_rpm_rate_adjusted;
 
-        if ((status_code_t)(int_value = (uint_fast16_t)mc_jog_execute(&plan_data, &gc_block)) == Status_OK)
+        int_value = (uint_fast16_t)mc_jog_execute(&plan_data, &gc_block);
+        if ((status_code_t)int_value == Status_OK && sys.cancel == false)
             memcpy(gc_state.position, gc_block.values.xyz, sizeof(gc_state.position));
 
         return (status_code_t)int_value;

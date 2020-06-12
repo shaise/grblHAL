@@ -147,7 +147,7 @@
 
 // Number of axes supported: minimum 3, maximum 6
 // If more than 3 axes are required a compliant driver must be provided
-#define N_AXIS 3 // Number of axes
+#define N_AXIS 5 // Number of axes
 
 // Enables single axis homing commands. $HX, $HY, and $HZ for X, Y, and Z-axis homing. The full homing
 // cycle is still invoked by the $H command. This is disabled by default. It's here only to address

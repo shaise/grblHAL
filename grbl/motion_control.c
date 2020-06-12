@@ -157,6 +157,9 @@ bool mc_line (float *target, plan_line_data_t *pl_data)
                 break;
         } while(true);
 
+         if (sys.cancel)
+        	 return false;
+
         // Plan and queue motion into planner buffer
         // bool plan_status; // Not used in normal operation.
         if(!plan_buffer_line(target, pl_data) && settings.flags.laser_mode && pl_data->condition.spindle.on && !pl_data->condition.spindle.ccw) {
